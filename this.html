@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>This is not confuse anymore</h1>
+    <p onclick="this.innerText = 'you clicked'">I am pickup-line.Don't use it.</p>
+
+    <script>
+        const myObject = {
+            name : 'Kuddus Ali',
+            getFullName : function() {
+                console.log(this);
+                return 'Mr. ' + this.name;
+            }
+        }
+
+        // myObject.getFullName();
+
+        const anotherObj = {
+            name : 'Rahim Ali'
+        }
+
+        // anotherObj.getFullName = myObject.getFullName;
+        // console.log(anotherObj);
+        // myObject.getFullName();
+        // anotherObj.getFullName();
+
+        function add (a, b){
+            console.log(this);
+            return a + b;
+        }
+        add(13, 9); //window
+
+        anotherObj.sum = add;
+        anotherObj.sum();
+
+        setTimeout(
+            function(){
+                console.log(this);
+            },1000
+        )  //window
+    </script>
+    
+</body>
+</html>
